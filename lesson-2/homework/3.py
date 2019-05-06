@@ -17,20 +17,30 @@ from functools import reduce
 
 # ENTER YOUR DECORATORS HERE
 
+
 def decorator1(func):
-    pass
+    def wrapper(x, y):
+        return func(int(x, 16), int(y, 8))
+    return wrapper
 
 
 def decorator2(func):
-    pass
+    def wrapper(x, y):
+        return func(x, y, 16)
+    return wrapper
 
 
 def decorator3(func):
-    pass
+    def wrapper(x, y):
+        x_as_list = [x]
+        return func(x_as_list, y)
+    return wrapper
 
 
 def decorator4(func):
-    pass
+    def wrapper(x, y):
+        return func(y, x)
+    return wrapper
 
 
 # ==========================
